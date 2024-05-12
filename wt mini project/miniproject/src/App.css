@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height:100vh ;
+  align-items:center;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFybXxlbnwwfHwwfHw%3D&w=1000&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+.auth-form-container, .login-form, .register-form{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-form-container{
+  padding: 5rem;
+  border : 1px solid skyblue;
+  border-radius: 10px; 
+}
+label{
+  background-color: rgb(246, 210, 144);
+  border-radius: 20px;
+  text-align: left;
+  padding: 0.35rem 0;
+}
+
+input{
+  margin: 1.0rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgreen;
+}
+ 
+button {
+  border:none;
+  background-color: rgb(103, 172, 232);
+  padding: 20px;
+  border-radius: 10px;
+}
+.link-btn{
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+h1{
+  font-style: italic;
+  font-size: xx-large;
+  color: blue;
+  background-color: rgb(151, 247, 159);
+}
+h2{
+  font-style: italic;
+  font-size: xx-large;
+  color: blue;
+  background-color: rgb(151, 247, 159);
+}
+
+h1 {
+    font-style: italic;
+    font-size: xx-large;
+    color: blue;
+    background-color: rgb(151, 247, 159);
+  }
+sub{
+    font-size: 9px;
+}
+h2 {
+  text-align: center;
+  text-shadow: aqua;
+  background-color: lightcoral;
+}
+.navbar {
+  background-color: rgb(67, 164, 75);
+}
+.navbar-brand {
+  font-style: oblique;
+  color: snow;
+  text-shadow: aqua;
+}
+.nav-item {
+  margin: 5px;
+}
+.nav-link {
+  font-style: oblique;
+  color: snow;
+  text-shadow: aqua;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.nav-link:hover {
+  background-color: lightblue;
+  color: navy;
+}
+.mydiv {
+  background-color: gray;
+  text-align: left;
+  text-emphasis-color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+.advertising-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+button{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition:blue 0.3s ease-in-out;
+}
+  
+  

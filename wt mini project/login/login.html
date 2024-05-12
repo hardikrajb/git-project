@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: white;
+        }
+      form {
+        background-color: crimson;
+        margin: 50px auto;
+        width: 500px;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+      }
+      label {
+        color: aqua;
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+</head>
+<body style="background-image: url(https://m.economictimes.com/thumb/height-450,width-600,imgsize-40756,msid-97531587/digitally-transforming-agriculture-photoianslife.jpg); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;">
+    <form name="form" onclick="return validate()">
+        <h1>DGH SERVICE</h1>
+            <label for="username">Email:</label>
+            <input type="text" id="bid" name="username" required>
+            <label for="email">Password:</label>
+            <input type="password" id="bname" name="email" required>
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="pname" name="password" required>
+        <input type="submit" name="insert" value="insert" id="insert"> <br><br>
+        <a href="D:\wt mini project\home_page.html" >Next</a>
+    </form>
+
+</body>
+
+<script>
+    const bid = document.getElementById('bid');
+    const bname = document.getElementById('bname');
+    const pname = document.getElementById('pname');
+    const insert = document.getElementById('insert');
+    const result = document.getElementById('res')
+
+
+    insert.addEventListener('click',()=>{
+        alert("you have entered your login credentials, please click next!!!");
+        var data = {
+            email: bid.value,
+            password: bname.value,
+            cpassword: pname.value,
+        }
+        fetch('http://localhost:9000/api/books',{
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json; chatset=UTF-8'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => {return res.json()})
+        .then(res => {result.innerText = JSON.stringify(res)});
+
+    })
+
+            function validate() {
+                
+                var d = document.form.bid.value;
+                if (d == "") {
+                    alert("please, Enter your mail id!!!");
+                    document.form.mail.focus();
+                    return false;
+                }
+                var atposition = d.indexOf("@");
+                var dotposition = d.lastIndexOf(".");
+                if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= d.length) {
+                    alert("please enter valid mail address!!!!");
+                    return false;
+                }
+                var p = document.form.bname.value;
+                if (p == "") {
+                    alert("please, Enter your password!!!");
+                    document.form.pass.focus();
+                    return false;
+                }
+                
+                var cp = document.form.pname.value;
+                if (cp == "") {
+                    alert("please, Enter your password!!!");
+                    document.form.cpass.focus();
+                    return false;
+                }
+                if (p != cp) {
+                    alert("Password not matched please enter correct one!!!!");
+                    document.form.cpass.focus();
+                    return false;
+                }
+    
+                
+    
+    
+                return true;
+            }
+</script>
+</html>
